@@ -1,5 +1,6 @@
 import Flutter
 import UIKit
+import WebKit
 
 @UIApplicationMain
 @objc class AppDelegate: FlutterAppDelegate {
@@ -57,7 +58,7 @@ class FLNativeView: NSObject, FlutterPlatformView {
         binaryMessenger messenger: FlutterBinaryMessenger?
     ) {
         _view = UIView()
-        super.init()
+         super.init()
         // iOS views can be created here
         createNativeView(view: _view)
     }
@@ -74,6 +75,14 @@ class FLNativeView: NSObject, FlutterPlatformView {
         nativeLabel.textAlignment = .center
         nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
         _view.addSubview(nativeLabel)
+
+         let webView = WKWebView(frame: _view.bounds)
+         _view.addSubview(webView)
+
+         webView.load(URLRequest(url: "https://www.apple.com/")
+
+
+
     }
 }
 

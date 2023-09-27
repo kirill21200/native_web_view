@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Web View Native',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Web VIew Native'),
+          title: const Text('Web VIew'),
         ),
         body: const NativeClass(),
       ),
