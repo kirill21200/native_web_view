@@ -68,15 +68,26 @@ class FLNativeView: NSObject, FlutterPlatformView {
     }
 
     func createNativeView(view _view: UIView){
-        _view.backgroundColor = UIColor.blue
-        let nativeLabel = UILabel()
-        nativeLabel.text = "Native text from iOS"
-        nativeLabel.textColor = UIColor.white
-        nativeLabel.textAlignment = .center
-        nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
-        _view.addSubview(nativeLabel)
+//         _view.backgroundColor = UIColor.blue
+//         let nativeLabel = UILabel()
+//         nativeLabel.text = "Native text from iOS"
+//         nativeLabel.textColor = UIColor.white
+//         nativeLabel.textAlignment = .center
+//         nativeLabel.frame = CGRect(x: 0, y: 0, width: 180, height: 48.0)
+//         _view.addSubview(nativeLabel)
 
-         let webView = WKWebView(frame: _view.bounds)
+
+
+         var webView: WKWebView!
+
+         let webConfiguration = WKWebViewConfiguration()
+         webView = WKWebView(frame: CGRect(x:0, y:0, width: 400, hight:800), configuration: webConfiguration)
+
+         let myUrl = URL(string:"https://www.apple.com/")
+         let myRequest = URLRequest(url:myUrl!)
+
+         webView.load(myRequest)
+
          _view.addSubview(webView)
 
          webView.load(URLRequest(url: "https://www.apple.com/")
