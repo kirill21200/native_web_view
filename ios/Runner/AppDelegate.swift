@@ -81,16 +81,16 @@ class FLNativeView: NSObject, FlutterPlatformView {
          var webView: WKWebView!
 
          let webConfiguration = WKWebViewConfiguration()
-         webView = WKWebView(frame: CGRect(x:0, y:0, width: 400, hight:800), configuration: webConfiguration)
+         webView = WKWebView(frame: CGRect(x:0, y:0, width:500, height:800), configuration: webConfiguration)
 
-         let myUrl = URL(string:"https://www.apple.com/")
+         let myUrl = URL(string:"https://kras-abs.ru/")
          let myRequest = URLRequest(url:myUrl!)
 
          webView.load(myRequest)
 
          _view.addSubview(webView)
 
-         webView.load(URLRequest(url: "https://www.apple.com/")
+        //  webView.load(URLRequest(url: "https://www.apple.com/"))
 
 
 
